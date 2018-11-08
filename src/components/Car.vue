@@ -1,10 +1,12 @@
 <template>
-    <tr>
-      <td>
-        <img src="https://via.placeholder.com/250x125/d2d2d2/?text=no%20image%20yet" onerror="this.src='https://via.placeholder.com/250x125/d2d2d2/?text=no%20image%20yet';" :alt="this.car.brand+' '+this.car.brand" :title="this.car.brand+' '+this.car.brand" class="carImg" />
+    <tr class="car-data">
+      <td width="250">
+        <div class="car-id">{{car._id}}</div>
+        <div>
+            <img src="https://via.placeholder.com/250x125/d2d2d2/?text=no%20image%20yet" onerror="this.src='https://via.placeholder.com/250x125/d2d2d2/?text=no%20image%20yet';" :alt="this.car.brand+' '+this.car.brand" :title="this.car.brand+' '+this.car.brand" class="carImg" />
+        </div>
       </td>
 
-      <td>{{car._id}}</td>
       <td>{{car.brand}}</td>
       <td>{{car.model}}</td>
       
@@ -49,5 +51,12 @@ export default {
 </script>
 
 <style lang="scss">
-
+.car-data{
+  .car-id{
+    text-align: center;
+    font-size:11px;
+    color:#999;
+    font-style: italic;
+  }
+}
 </style>
