@@ -27,7 +27,7 @@
                                 </tr>
                             </thead>
                             <tbody id="tbody_cars">
-                              <Car v-for="c in cars" :car="c"></Car>
+                              <car v-for="c in cars" :car="c" :key="c._id"></car>
                             </tbody>
                         </table>
                     </div>
@@ -41,11 +41,11 @@
 <script>
 // @ is an alias to /src
 
-import Car from '@/components/Car.vue'
+import car from '@/components/Car.vue'
 
 export default {
   components: {
-        Car
+        car
   },
   data(){
     return{
