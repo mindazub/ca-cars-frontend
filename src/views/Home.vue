@@ -49,7 +49,6 @@ export default {
   data(){
     return{
       
-      test: "test",
       cars: []
     }
   },
@@ -61,7 +60,7 @@ export default {
   },
   methods:{
     printMessage: function(msg){
-      this.test = msg;
+      
     }
   }
 }

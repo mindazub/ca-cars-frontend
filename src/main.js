@@ -12,10 +12,11 @@ library.add(faCoffee, faTrash, faTrashAlt)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+
 Vue.config.productionTip = false
 
 new Vue({
   router,
-  store,
+  store,  
   render: h => h(App)
 }).$mount('#app')
