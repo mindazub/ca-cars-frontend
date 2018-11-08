@@ -8,8 +8,8 @@
       <td>{{this.car.brand}}</td>
       <td>{{this.car.model}}</td>
       
-      <td>{{this.car.engine}}</td>
-      <td>{{this.car.price}}</td>
+      <td>{{this.car.engine.toFixed(1)}}</td>
+      <td>{{this.car.price.toFixed(2)}} €</td>
       
       <td></td>
     </tr>
