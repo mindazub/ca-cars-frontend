@@ -27,7 +27,7 @@
                                 </tr>
                             </thead>
                             <tbody id="tbody_cars">
-                              <Car></Car>
+                              <Car v-for="c in cars" :car="c"></Car>
                             </tbody>
                         </table>
                     </div>
@@ -44,13 +44,14 @@
 import Car from '@/components/Car.vue'
 
 export default {
+  components: {
+        Car
+  },
   data(){
     return{
-      components: {
-        Car
-      },
+      
       test: "test",
-      cars: [],
+      cars: []
     }
   },
   created(){
