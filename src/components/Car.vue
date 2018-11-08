@@ -12,15 +12,15 @@
       <td>{{car.price.toFixed(2)}} €</td>
       
       <td>
-        <button class="car-remove fas fa-trash-alt btn  btn-danger" 
-        @click="removeCar()"></button>
+        <button class="car-remove btn  btn-danger" 
+        @click="removeCar()">Delete <font-awesome-icon icon="trash" /></button>
         </td>
     </tr>
 </template>
 
 <script>
 export default {
-  props:['car'],
+  props:['car', 'CARS'],
   name: 'Car',  
   data(){
     return {
@@ -29,8 +29,25 @@ export default {
   },
   methods: {
     removeCar: function(){
-      console.log(`remove ${this.car._id}`);
+      let carID = this.car._id;
+      fetch(`http://localhost:5001/api/cars/${this.car._id}`, {
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+        //body: JSON.stringify({id: '5bdcdfa40f0a326f858feae0'})
+      })
+      .then(response => response.json()).then(json=>{      
+        if(json.status==='ok'){          
+          let targetCar = this.CARS.find(function(x) {              
+              return x._id === carID;
+          });
+          this.CARS.splice(this.CARS.indexOf(targetCar), 1);
+        }
+      })
     }
   }
 }
 </script>
+
+<style lang="scss">
+
+</style>
